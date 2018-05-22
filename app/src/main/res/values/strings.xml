@@ -18,6 +18,9 @@
 	<string name="input_activity_voucher_code_text">Номер на ваучера</string>
 	<string name="input_activity_voucher_secret_code_text">Секретен код</string>
 	<string name="input_activity_button_text">Провери ваучера</string>
+	<string name="input_activity_empty_voucher_code_text">Кода на ваучера не може да бъде празен</string>
+	<string name="input_activity_empty_voucher_secret_code_text">Секретния код на ваучера не може да бъде празен</string>
+	<string name="input_activity_no_response">Няма връзка със сървъра на Grabo.bg</string>
 
 	<string name="main_activity_text_description">Провери за валидност на ваучер.</string>
 	<string name="main_activity_text_options">Избери опция:</string>
@@ -30,14 +33,29 @@
 
 	<string name="scan_activity_top_text">Провери за валидност на ваучер:</string>
 	<string name="scan_activity_bottom_text">Сканирайте QR или Баркода\nот ваучера на клиента.</string>
+	<string name="scan_activity_invalid_barcode">Сканираният баркод е невалиден</string>
+	<string name="scan_activity_no_response">Няма връзка със сървъра на Grabo.bg</string>
 
 	<string name="settings_activity_text_description">Настройки на приложението:</string>
 	<string name="settings_activity_input_text">ЕИК</string>
+	<string name="settings_activity_sound_text">Звук при сканиране</string>
+	<string name="settings_activity_vibrate_text">Вибрация при сканиране</string>
 	<string name="settings_activity_save_button">Запази</string>
 
 	<string name="success_activity_text_description">Test</string>
 	<string name="success_activity_mark_as_used">Маркирай като използван</string>
 	<string name="success_activity_text_result_header">Сканирането е успешно!</string>
+	<string name="success_activity_input_success">Въвеждането е успешно!</string>
+	<string name="success_activity_no_response">Няма връзка със сървъра на Grabo.bg</string>
+	<string name="success_activity_warning_text">Внимание:</string>
+	<string name="success_activity_company_title_text">Доставчик:</string>
+	<string name="success_activity_username_text">Закупен от:</string>
+	<string name="success_activity_price_text">Цена:</string>
+	<string name="success_activity_amount_paid_text">Платени:</string>
+	<string name="success_activity_amount_to_surcharge_text">За доплащане:</string>
+	<string name="success_activity_date_valid_text">Валиден до:</string>
+	<string name="success_activity_deal_rules_text">Условия на офертата:</string>
+	<string name="success_activity_deal_extras_text">Бонуси към офертата:</string>
 
 	<string name="about_title">about the app title</string>
 	<string name="about_description">about the app description</string>

@@ -21,7 +21,6 @@ import org.json.JSONObject;
 
 public class InputActivity extends AppCompatActivity {
 
-	public SharedPreferences settings;
 	public String eik = "";
 	public boolean is_loading = false;
 
@@ -31,7 +30,7 @@ public class InputActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.input_activity);
 
-		settings = getSharedPreferences(MainActivity.SAVED_VARIABLES, 0);
+		SharedPreferences settings = getSharedPreferences(MainActivity.SAVED_VARIABLES, 0);
 		eik = settings.getString("EIK", "");
 
 		TextView back_button = findViewById(R.id.input_activity_back_button);
@@ -63,10 +62,10 @@ public class InputActivity extends AppCompatActivity {
 			String voucher_code = voucher_code_input.getText().toString();
 			String voucher_secret_code = voucher_secret_code_input.getText().toString();
 			if (voucher_code.equals("")) {
-				Toast.makeText(getApplicationContext(), "Кода на ваучера не може да бъде празен", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), R.string.input_activity_empty_voucher_code_text, Toast.LENGTH_SHORT).show();
 			}
 			else if (voucher_secret_code.equals("")) {
-				Toast.makeText(getApplicationContext(), "Секретния код на ваучера не може да бъде празен", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), R.string.input_activity_empty_voucher_secret_code_text, Toast.LENGTH_SHORT).show();
 			}
 			else {
 				is_loading = true;
@@ -77,7 +76,7 @@ public class InputActivity extends AppCompatActivity {
 
 	public void sendToApi(final String voucher_code, final String voucher_secret_code) {
 
-		RequestQueue queue = Volley.newRequestQueue(this); // this = context
+		RequestQueue queue = Volley.newRequestQueue(this);
 
 		String url = "https://grabo.bg/api/checkvoucher?type=input&voucher_code=" + voucher_code + "&voucher_secret_code=" + voucher_secret_code;
 
@@ -85,14 +84,12 @@ public class InputActivity extends AppCompatActivity {
 			url = url + "&eik=" + eik;
 		}
 
-		// prepare the Request
 		JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
 			new Response.Listener<JSONObject>()
 			{
 				@Override
 				public void onResponse(JSONObject response) {
 					is_loading = false;
-					// display response
 					String result_type = "";
 					try {
 						result_type = response.getString("result");
@@ -120,12 +117,11 @@ public class InputActivity extends AppCompatActivity {
 			    @Override
 		         public void onErrorResponse(VolleyError error) {
 				    is_loading = false;
-				    Toast.makeText(getApplicationContext(), "Няма връзка със сървъра на Grabo.bg.", Toast.LENGTH_LONG).show();
+				    Toast.makeText(getApplicationContext(), R.string.input_activity_no_response, Toast.LENGTH_LONG).show();
 		       }
 		    }
 		);
 
-		// add it to the RequestQueue
 		queue.add(getRequest);
 
 	}

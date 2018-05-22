@@ -3,7 +3,6 @@ package bg.grabo.scanner;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -47,7 +46,6 @@ public class ErrorActivity extends AppCompatActivity {
 				JSONObject result = new JSONObject(response);
 				String error_msg = result.getString("errmsg");
 				error_text.setText(error_msg);
-				Log.d("KOR", error_msg);
 				RelativeLayout scan_image = findViewById(R.id.error_activity_scan_new_voucher);
 				RelativeLayout input_image = findViewById(R.id.error_activity_input_new_voucher);
 				if (input_type.equals("qr") || input_type.equals("barcode")) {

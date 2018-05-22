@@ -9,7 +9,6 @@ import android.text.InputType;
 import android.text.Spannable;
 import android.text.Spanned;
 import android.text.style.StrikethroughSpan;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +33,6 @@ import java.util.Locale;
 
 public class SuccessActivity extends AppCompatActivity {
 
-	public SharedPreferences settings;
-	public String eik = "";
 	public String barcode = "";
 	public String voucher_code = "";
 	public String voucher_secret_code = "";
@@ -47,9 +44,6 @@ public class SuccessActivity extends AppCompatActivity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.success_activity);
-
-		settings = getSharedPreferences(MainActivity.SAVED_VARIABLES, 0);
-		eik = settings.getString("EIK", "");
 
 		LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
 
@@ -91,8 +85,6 @@ public class SuccessActivity extends AppCompatActivity {
 			input_type = this_intent.getStringExtra("input_type");
 
 			String response = this_intent.getStringExtra("response");
-			//TextView success_text = findViewById(R.id.success_result);
-			//success_text.setText(response);
 
 			try {
 
@@ -108,15 +100,13 @@ public class SuccessActivity extends AppCompatActivity {
 					top_header_icon.setText(R.string.icon_rounded_info);
 					top_header_text.setTextColor(getResources().getColor(R.color.colorError));
 					warnings_textview.setTypeface(MyApplication.roboto_light);
-					System.out.print(warnings);
 					for (int i = 0; i < warnings.length(); i++) {
 						String warning = warnings.getString(i);
-						//Log.d("warning #" + i + ": ", warning);
-						View rl1 = inflater.inflate(R.layout.warnings_text, nullParent, false);
-						TextView d_uslovie_txt = rl1.findViewById(R.id.warning_text);
-						d_uslovie_txt.setText(warning);
-						d_uslovie_txt.setTypeface(MyApplication.roboto_regular);
-						warnings_layout.addView(rl1);
+						View warning_text_layout = inflater.inflate(R.layout.warnings_text, nullParent, false);
+						TextView warning_txt = warning_text_layout.findViewById(R.id.warning_text);
+						warning_txt.setText(warning);
+						warning_txt.setTypeface(MyApplication.roboto_regular);
+						warnings_layout.addView(warning_text_layout);
 					}
 				} else {
 					warnings_textview.setVisibility(View.GONE);
@@ -156,8 +146,8 @@ public class SuccessActivity extends AppCompatActivity {
 
 				// prices
 				LinearLayout voucher_prices_layout = findViewById(R.id.success_activity_voucher_prices);
-				View vpl = inflater.inflate(R.layout.voucher_prices, nullParent, false);
-				voucher_prices_layout.addView(vpl);
+				View voucher_price_layout = inflater.inflate(R.layout.voucher_prices, nullParent, false);
+				voucher_prices_layout.addView(voucher_price_layout);
 
 				String price_regular = voucher.getString("price_regular");
 				String price_promo = voucher.getString("price_promo");
@@ -229,12 +219,12 @@ public class SuccessActivity extends AppCompatActivity {
 					deal_rules_textview.setTypeface(MyApplication.roboto_light);
 					for (int i = 0; i < deal_rules.length(); i++) {
 						String rule = deal_rules.getString(i);
-						View rl1 = inflater.inflate(R.layout.deal_rules_text, nullParent, false);
-						TextView d_uslovie_txt = rl1.findViewById(R.id.deal_rules_text_);
+						View deal_rule_layout = inflater.inflate(R.layout.deal_rules_text, nullParent, false);
+						TextView deal_rule_text = deal_rule_layout.findViewById(R.id.deal_rules_text_);
 						rule = rule.replace("\n", "<br />");
-						d_uslovie_txt.setText(Html.fromHtml(rule));
-						d_uslovie_txt.setTypeface(MyApplication.roboto_regular);
-						deal_rules_layout.addView(rl1);
+						deal_rule_text.setText(Html.fromHtml(rule));
+						deal_rule_text.setTypeface(MyApplication.roboto_regular);
+						deal_rules_layout.addView(deal_rule_layout);
 					}
 				} else {
 					deal_rules_textview.setVisibility(View.GONE);
@@ -249,12 +239,12 @@ public class SuccessActivity extends AppCompatActivity {
 					deal_extras_textview.setTypeface(MyApplication.roboto_light);
 					for (int i = 0; i < deal_extras.length(); i++) {
 						String rule = deal_extras.getString(i);
-						View rl1 = inflater.inflate(R.layout.deal_rules_text, nullParent, false);
-						TextView d_uslovie_txt = rl1.findViewById(R.id.deal_rules_text_);
+						View deal_extra_layout = inflater.inflate(R.layout.deal_rules_text, nullParent, false);
+						TextView deal_extra_text = deal_extra_layout.findViewById(R.id.deal_rules_text_);
 						rule = rule.replace("\n", "<br />");
-						d_uslovie_txt.setText(Html.fromHtml(rule));
-						d_uslovie_txt.setTypeface(MyApplication.roboto_regular);
-						deal_extras_layout.addView(rl1);
+						deal_extra_text.setText(Html.fromHtml(rule));
+						deal_extra_text.setTypeface(MyApplication.roboto_regular);
+						deal_extras_layout.addView(deal_extra_layout);
 					}
 				} else {
 					deal_extras_textview.setVisibility(View.GONE);
@@ -268,7 +258,7 @@ public class SuccessActivity extends AppCompatActivity {
 					scan_image.setVisibility(View.VISIBLE);
 					input_image.setVisibility(View.INVISIBLE);
 				} else {
-					top_header_text.setText("Въвеждането е успешно!");
+					top_header_text.setText(R.string.success_activity_input_success);
 					scan_image.setVisibility(View.INVISIBLE);
 					input_image.setVisibility(View.VISIBLE);
 				}
@@ -291,7 +281,7 @@ public class SuccessActivity extends AppCompatActivity {
 
 			is_loading = true;
 
-			RequestQueue queue = Volley.newRequestQueue(this); // this = context
+			RequestQueue queue = Volley.newRequestQueue(this);
 
 			String url = "https://grabo.bg/api/checkvoucher?mark_as_used=true&";
 
@@ -301,18 +291,19 @@ public class SuccessActivity extends AppCompatActivity {
 				url = url + "type=qr&voucher_code=" + voucher_code + "&voucher_secret_code=" + voucher_secret_code;
 			}
 
+			SharedPreferences settings = getSharedPreferences(MainActivity.SAVED_VARIABLES, 0);
+			String eik = settings.getString("EIK", "");
+
 			if (!eik.equals("")) {
 				url = url + "&eik=" + eik;
 			}
 
-			// prepare the Request
 			JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
 				new Response.Listener<JSONObject>()
 				{
 					@Override
 					public void onResponse(JSONObject response) {
 						is_loading = false;
-						// display response
 						String result_type = "";
 						try {
 							result_type = response.getString("result");
@@ -334,14 +325,11 @@ public class SuccessActivity extends AppCompatActivity {
 				    @Override
 			         public void onErrorResponse(VolleyError error) {
 					    is_loading = false;
-			            Log.d("Error.Response", error.toString());
-					    //Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
-					    Toast.makeText(getApplicationContext(), "Няма връзка със сървъра на Grabo.bg.", Toast.LENGTH_LONG).show();
+					    Toast.makeText(getApplicationContext(), R.string.success_activity_no_response, Toast.LENGTH_LONG).show();
 			       }
 			    }
 			);
 
-			// add it to the RequestQueue
 			queue.add(getRequest);
 
 		}

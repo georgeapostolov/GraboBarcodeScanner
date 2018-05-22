@@ -119,7 +119,7 @@
 					android:id="@+id/success_activity_warnings_title"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="Внимание:"
+					android:text="@string/success_activity_warning_text"
 					android:textColor="#ffb300"
 					android:textSize="17sp"
 					android:paddingTop="10dp"
@@ -156,7 +156,7 @@
 					android:id="@+id/success_activity_company_name_title"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="Доставчик:"
+					android:text="@string/success_activity_company_title_text"
 					android:textColor="#909090"
 					android:textSize="17sp"
 					android:paddingTop="10dp"
@@ -178,7 +178,7 @@
 					android:id="@+id/success_activity_username_title"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="Закупен от:"
+					android:text="@string/success_activity_username_text"
 					android:textColor="#909090"
 					android:textSize="17sp"
 					android:paddingTop="10dp"
@@ -202,7 +202,8 @@
 					android:layout_height="wrap_content"
 					android:paddingTop="10dp"
 					android:paddingLeft="20dp"
-					android:paddingRight="20dp">
+					android:paddingRight="20dp"
+					android:orientation="horizontal">
 				</LinearLayout>
 
 				<!-- date valid title + date valid text -->
@@ -210,7 +211,7 @@
 					android:id="@+id/success_activity_date_valid_title"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="Валиден до:"
+					android:text="@string/success_activity_date_valid_text"
 					android:textColor="#909090"
 					android:textSize="17sp"
 					android:paddingTop="10dp"
@@ -232,7 +233,7 @@
 					android:id="@+id/success_activity_deal_rules_title"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="Условия на офертата:"
+					android:text="@string/success_activity_deal_rules_text"
 					android:textColor="#909090"
 					android:textSize="17sp"
 					android:paddingTop="10dp"
@@ -256,7 +257,7 @@
 					android:id="@+id/success_activity_deal_extras_title"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="Бонуси към офертата:"
+					android:text="@string/success_activity_deal_extras_text"
 					android:textColor="#909090"
 					android:textSize="17sp"
 					android:paddingTop="10dp"

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <declare-styleable name="ScannerOverlay">
         <attr name="square_width" format="integer" />
         <attr name="square_height" format="integer" />
@@ -12,4 +13,5 @@
         <attr name="auto_focus" format="boolean" />
         <attr name="use_flash" format="boolean" />
     </declare-styleable>
+
 </resources>

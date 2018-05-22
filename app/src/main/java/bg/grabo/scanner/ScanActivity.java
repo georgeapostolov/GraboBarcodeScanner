@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.TextView;
@@ -87,7 +86,6 @@ public class ScanActivity extends AppCompatActivity implements BarcodeReader.Bar
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                         v.vibrate(VibrationEffect.createOneShot(250, VibrationEffect.DEFAULT_AMPLITUDE));
                     } else {
-                        //deprecated in API 26
                         v.vibrate(250);
                     }
                 }
@@ -111,7 +109,7 @@ public class ScanActivity extends AppCompatActivity implements BarcodeReader.Bar
 			            }
 		            }
 		            if (!code_found) {
-			            Toast.makeText(getApplicationContext(), "Сканираният баркод е невалиден: " + scanned, Toast.LENGTH_LONG).show();
+			            Toast.makeText(getApplicationContext(), R.string.scan_activity_invalid_barcode + ": " + scanned, Toast.LENGTH_LONG).show();
 		            }
 	            }
 	        });
@@ -135,7 +133,7 @@ public class ScanActivity extends AppCompatActivity implements BarcodeReader.Bar
 
 	public void codeFound(final String barcode, final String voucher_code, final String voucher_secret_code, final String code_type) {
 
-		RequestQueue queue = Volley.newRequestQueue(this); // this = context
+		RequestQueue queue = Volley.newRequestQueue(this);
 
 		String url = "https://grabo.bg/api/checkvoucher?";
 
@@ -149,14 +147,12 @@ public class ScanActivity extends AppCompatActivity implements BarcodeReader.Bar
 			url = url + "&eik=" + eik;
 		}
 
-		// prepare the Request
 		JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
 			new Response.Listener<JSONObject>()
 			{
 				@Override
 				public void onResponse(JSONObject response) {
 					is_loading = false;
-					// display response
 					String result_type = "";
 					try {
 						result_type = response.getString("result");
@@ -185,14 +181,11 @@ public class ScanActivity extends AppCompatActivity implements BarcodeReader.Bar
 			    @Override
 		         public void onErrorResponse(VolleyError error) {
 				    is_loading = false;
-		            Log.d("Error.Response", error.toString());
-				    //Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
-				    Toast.makeText(getApplicationContext(), "Няма връзка със сървъра на Grabo.bg", Toast.LENGTH_LONG).show();
+				    Toast.makeText(getApplicationContext(), R.string.scan_activity_no_response, Toast.LENGTH_LONG).show();
 		       }
 		    }
 		);
 
-		// add it to the RequestQueue
 		queue.add(getRequest);
 
 	}

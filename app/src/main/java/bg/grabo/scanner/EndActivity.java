@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 public class EndActivity extends AppCompatActivity {
 
-	public String input_type;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
@@ -38,7 +36,7 @@ public class EndActivity extends AppCompatActivity {
 
 		Intent this_intent = getIntent();
 		if (this_intent.getExtras() != null) {
-			input_type = this_intent.getStringExtra("input_type");
+			String input_type = this_intent.getStringExtra("input_type");
 			RelativeLayout scan_image = findViewById(R.id.end_activity_scan_new_voucher);
 			RelativeLayout input_image = findViewById(R.id.end_activity_input_new_voucher);
 			if (input_type.equals("qr") || input_type.equals("barcode")) {
