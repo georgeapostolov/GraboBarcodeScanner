@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context=".SuccessActivity"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/background"
+	android:clipChildren="false"
+	android:clipToPadding="false"
+	>
+
+	<!-- BACK BUTTON -->
+	<TextView
+		android:id="@+id/success_activity_back_button"
+		android:layout_width="46dp"
+		android:layout_height="46dp"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginLeft="10dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginTop="15dp"
+		android:gravity="center"
+		android:onClick="closeActivity"
+		android:text="@string/icon_arrow_back"
+		android:textColor="#ffffff"
+		android:textSize="46sp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<!-- GRABO LOGO -->
+	<ImageView
+		android:id="@+id/success_activity_logo"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="15dp"
+		android:contentDescription="@string/grabo_logo"
+		android:src="@drawable/logo"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<!-- WHITE BOX -->
+	<RelativeLayout
+		android:id="@+id/success_result_background"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="32dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginLeft="8dp"
+		android:layout_marginRight="8dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="50dp"
+		android:background="@drawable/rounded_shape"
+		android:clipChildren="true"
+		android:clipToPadding="true"
+		app:layout_constraintBottom_toTopOf="@+id/success_activity_mark_as_used"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/success_activity_logo">
+
+		<!-- GREEN TICK ICON -->
+		<TextView
+			android:id="@+id/success_activity_top_header_icon"
+			android:layout_width="58sp"
+			android:layout_height="58sp"
+			android:layout_alignParentTop="true"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="-25dp"
+			android:background="@drawable/rounded_header_image"
+			android:gravity="center"
+			android:text="@string/icon_rounded_tick"
+			android:textColor="#9dcb6b"
+			android:textSize="50sp"
+			/>
+
+		<!-- SUCCESS TEXT + 1PX BORDER -->
+		<TextView
+			android:id="@+id/success_activity_text_result_header"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentTop="true"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="30dp"
+			android:background="@drawable/thin_border"
+			android:gravity="center_horizontal"
+			android:paddingBottom="10dp"
+			android:text="@string/success_activity_text_result_header"
+			android:textColor="#629e22"
+			android:textSize="17sp"
+			/>
+
+		<ScrollView
+			android:id="@+id/success_result_scrollview"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_alignParentTop="true"
+			android:layout_centerHorizontal="true"
+			android:layout_marginBottom="10dp"
+			android:layout_marginTop="65dp"
+			android:background="@color/colorEdit"
+			android:clipChildren="true"
+			android:clipToPadding="true"
+			app:layout_constraintBottom_toTopOf="@+id/success_activity_text_result_header">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<!-- warning title + warning messages texts -->
+				<TextView
+					android:id="@+id/success_activity_warnings_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="Внимание:"
+					android:textColor="#ffb300"
+					android:textSize="17sp"
+					android:paddingTop="10dp"
+					android:paddingRight="20dp"
+					android:paddingLeft="20dp"
+					/>
+				<LinearLayout
+			        android:id="@+id/success_activity_warnings_text"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical"
+			        android:textColor="#ffb300"
+                    android:textSize="17sp"
+			        android:background="@drawable/thin_border"
+			        android:paddingLeft="20dp"
+			        android:paddingBottom="15dp"
+			   		android:paddingRight="20dp">
+			    </LinearLayout>
+
+				<!-- voucher title text -->
+				<TextView
+					android:id="@+id/success_activity_voucher_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000"
+					android:textSize="18sp"
+					android:paddingTop="10dp"
+					android:paddingLeft="20dp"
+					android:paddingRight="20dp"
+					/>
+
+				<!-- company title + company text -->
+				<TextView
+					android:id="@+id/success_activity_company_name_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="Доставчик:"
+					android:textColor="#909090"
+					android:textSize="17sp"
+					android:paddingTop="10dp"
+					android:paddingLeft="20dp"
+					android:paddingRight="20dp"
+					/>
+				<TextView
+					android:id="@+id/success_activity_company_name_text"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#333333"
+					android:textSize="18sp"
+					android:paddingLeft="20dp"
+					android:paddingRight="20dp"
+					/>
+
+				<!-- username title + username text -->
+				<TextView
+					android:id="@+id/success_activity_username_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="Закупен от:"
+					android:textColor="#909090"
+					android:textSize="17sp"
+					android:paddingTop="10dp"
+					android:paddingLeft="20dp"
+					android:paddingRight="20dp"
+					/>
+				<TextView
+					android:id="@+id/success_activity_username_text"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#333333"
+					android:textSize="18sp"
+					android:paddingLeft="20dp"
+					android:paddingRight="20dp"
+					/>
+
+				<!-- voucher prices -->
+				<LinearLayout
+					android:id="@+id/success_activity_voucher_prices"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingTop="10dp"
+					android:paddingLeft="20dp"
+					android:paddingRight="20dp">
+				</LinearLayout>
+
+				<!-- date valid title + date valid text -->
+				<TextView
+					android:id="@+id/success_activity_date_valid_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="Валиден до:"
+					android:textColor="#909090"
+					android:textSize="17sp"
+					android:paddingTop="10dp"
+					android:paddingLeft="20dp"
+					android:paddingRight="20dp"
+					/>
+				<TextView
+					android:id="@+id/success_activity_date_valid_text"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#333333"
+					android:textSize="17sp"
+					android:paddingLeft="20dp"
+					android:paddingRight="20dp"
+					/>
+
+				<!-- deal rules title + deal rules texts -->
+				<TextView
+					android:id="@+id/success_activity_deal_rules_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="Условия на офертата:"
+					android:textColor="#909090"
+					android:textSize="17sp"
+					android:paddingTop="10dp"
+					android:paddingLeft="20dp"
+					android:paddingRight="20dp"
+					/>
+				<LinearLayout
+			        android:id="@+id/success_activity_deal_rules_text"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical"
+			        android:textColor="#333333"
+                    android:textSize="17sp"
+			        android:paddingTop="3dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+			    </LinearLayout>
+
+				<!-- deal extras title + deal extras texts -->
+				<TextView
+					android:id="@+id/success_activity_deal_extras_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="Бонуси към офертата:"
+					android:textColor="#909090"
+					android:textSize="17sp"
+					android:paddingTop="10dp"
+					android:paddingLeft="20dp"
+					android:paddingRight="20dp"
+					/>
+				<LinearLayout
+			        android:id="@+id/success_activity_deal_extras_text"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical"
+			        android:textColor="#333333"
+                    android:textSize="17sp"
+			        android:paddingTop="3dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+			    </LinearLayout>
+
+			</LinearLayout>
+
+		</ScrollView>
+
+
+	</RelativeLayout>
+
+	<!-- MARK AS USED BUTTON -->
+	<RelativeLayout
+		android:id="@+id/success_activity_mark_as_used"
+		android:layout_width="260dp"
+		android:layout_height="50dp"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="15dp"
+		android:background="@drawable/rounded_button"
+		android:onClick="markAsUsed"
+		android:visibility="gone"
+		app:layout_constraintBottom_toTopOf="@+id/success_activity_scan_new_voucher"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent">
+
+		<!-- MARK AS USED BUTTON ICON -->
+		<TextView
+			android:id="@+id/success_activity_mark_as_used_icon"
+			android:layout_width="28dp"
+			android:layout_height="28dp"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="10dp"
+			android:layout_marginStart="10dp"
+			android:gravity="center"
+			android:text="@string/icon_box"
+			android:textColor="#8bc34a"
+			android:textSize="28sp"
+			/>
+
+		<!-- MARK AS USED BUTTON TEXT -->
+		<TextView
+			android:id="@+id/success_activity_mark_as_used_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="10dp"
+			android:layout_marginStart="10dp"
+			android:layout_toEndOf="@+id/success_activity_mark_as_used_icon"
+			android:layout_toRightOf="@+id/success_activity_mark_as_used_icon"
+			android:gravity="center"
+			android:text="@string/success_activity_mark_as_used"
+			android:textColor="#565656"
+			android:textSize="15sp"
+			/>
+
+	</RelativeLayout>
+
+	<!-- SCAN NEW VOUCHER BUTTON -->
+	<RelativeLayout
+		android:id="@+id/success_activity_scan_new_voucher"
+		android:layout_width="260dp"
+		android:layout_height="50dp"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="15dp"
+		android:background="@drawable/rounded_button_empty"
+		android:contentDescription="@string/scan_new_voucher"
+		android:onClick="openScanActivity"
+		android:visibility="gone"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent">
+
+		<!-- SCAN NEW VOUCHER ICON -->
+		<TextView
+			android:id="@+id/success_activity_scan_new_voucher_icon"
+			android:layout_width="28dp"
+			android:layout_height="28dp"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="30dp"
+			android:layout_marginStart="30dp"
+			android:gravity="center"
+			android:text="@string/icon_camera"
+			android:textColor="#ffffff"
+			android:textSize="28sp"
+			/>
+
+		<!-- SCAN NEW VOUCHER TEXT -->
+		<TextView
+			android:id="@+id/success_activity_scan_new_voucher_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="10dp"
+			android:layout_marginStart="10dp"
+			android:layout_toEndOf="@+id/success_activity_scan_new_voucher_icon"
+			android:layout_toRightOf="@+id/success_activity_scan_new_voucher_icon"
+			android:gravity="center"
+			android:text="@string/scan_new_voucher"
+			android:textColor="#ffffff"
+			android:textSize="15sp"
+			/>
+
+	</RelativeLayout>
+
+	<!-- INPUT NEW VOUCHER BUTTON -->
+	<RelativeLayout
+		android:id="@+id/success_activity_input_new_voucher"
+		android:layout_width="260dp"
+		android:layout_height="50dp"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="15dp"
+		android:background="@drawable/rounded_button_empty"
+		android:contentDescription="@string/input_new_voucher"
+		android:onClick="openInputActivity"
+		android:visibility="gone"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent">
+
+		<!-- INPUT NEW VOUCHER ICON -->
+		<TextView
+			android:id="@+id/success_activity_input_new_voucher_icon"
+			android:layout_width="20dp"
+			android:layout_height="20dp"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="45dp"
+			android:layout_marginStart="45dp"
+			android:gravity="center"
+			android:text="@string/icon_pencil"
+			android:textColor="#ffffff"
+			android:textSize="20sp"
+			/>
+
+		<!-- INPUT NEW VOUCHER TEXT -->
+		<TextView
+			android:id="@+id/success_activity_input_new_voucher_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="10dp"
+			android:layout_marginStart="10dp"
+			android:layout_toEndOf="@+id/success_activity_input_new_voucher_icon"
+			android:layout_toRightOf="@+id/success_activity_input_new_voucher_icon"
+			android:gravity="center"
+			android:text="@string/input_new_voucher"
+			android:textColor="#ffffff"
+			android:textSize="15sp"
+			/>
+
+	</RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

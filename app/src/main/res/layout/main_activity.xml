@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context=".MainActivity"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/background"
+	>
+
+	<!-- GRABO LOGO -->
+	<ImageView
+		android:id="@+id/main_activity_logo"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="15dp"
+		android:contentDescription="@string/grabo_logo"
+		android:src="@drawable/logo"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<!-- DESCRIPTION TEXT -->
+	<TextView
+		android:id="@+id/main_activity_text_description"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="60dp"
+		android:text="@string/main_activity_text_description"
+		android:textColor="#ffffff"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/main_activity_logo"
+		/>
+
+	<!-- OPTIONS TEXT -->
+	<TextView
+		android:id="@+id/main_activity_text_options"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="10dp"
+		android:text="@string/main_activity_text_options"
+		android:textColor="#ffffff"
+		android:textSize="17sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/main_activity_text_description"
+		/>
+
+	<!-- SCAN BUTTON -->
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/main_activity_scan_button"
+		android:layout_width="260dp"
+		android:layout_height="50dp"
+		android:layout_marginTop="20dp"
+		android:background="@drawable/rounded_button"
+		android:onClick="openScanActivity"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.496"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/main_activity_text_options"
+		>
+
+		<!-- SCAN BUTTON ICON -->
+		<TextView
+			android:id="@+id/main_activity_scan_button_icon"
+			android:layout_width="32dp"
+			android:layout_height="32dp"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_centerVertical="true"
+			android:layout_marginBottom="8dp"
+			android:layout_marginLeft="38dp"
+			android:layout_marginStart="38dp"
+			android:layout_marginTop="8dp"
+			android:gravity="center"
+			android:text="@string/icon_camera"
+			android:textColor="#555555"
+			android:textSize="32sp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			/>
+
+		<!-- SCAN BUTTON TEXT TOP -->
+		<TextView
+			android:id="@+id/main_activity_scan_button_text_top"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignLeft="@+id/main_activity_scan_button_text_bottom"
+			android:layout_alignParentTop="true"
+			android:layout_alignStart="@+id/main_activity_scan_button_text_bottom"
+			android:layout_marginLeft="10dp"
+			android:layout_marginStart="10dp"
+			android:gravity="center"
+			android:text="@string/main_activity_scan_button_text_top"
+			android:textColor="#565656"
+			android:textSize="19sp"
+			android:textStyle="bold"
+			app:layout_constraintStart_toEndOf="@+id/main_activity_scan_button_icon"
+			app:layout_constraintTop_toTopOf="parent"/>
+
+		<!-- SCAN BUTTON TEXT BOTTOM -->
+		<TextView
+			android:id="@+id/main_activity_scan_button_text_bottom"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_centerHorizontal="true"
+			android:gravity="center"
+			android:paddingBottom="3dp"
+			android:text="@string/main_activity_scan_button_text_bottom"
+			android:textColor="#565656"
+			android:textSize="11sp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="@+id/main_activity_scan_button_text_top"
+			app:layout_constraintTop_toBottomOf="@+id/main_activity_scan_button_text_top"
+			app:layout_constraintVertical_bias="1.0"/>
+
+	</android.support.constraint.ConstraintLayout>
+
+	<!-- INPUT BUTTON -->
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/main_activity_input_button"
+		android:layout_width="222dp"
+		android:layout_height="54dp"
+		android:layout_marginTop="20dp"
+		android:background="@drawable/rounded_button_empty"
+		android:onClick="openInputActivity"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.496"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/main_activity_scan_button"
+		>
+
+		<!-- INPUT BUTTON ICON -->
+		<TextView
+			android:id="@+id/main_activity_input_button_icon"
+			android:layout_width="24dp"
+			android:layout_height="24dp"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_centerVertical="true"
+			android:layout_marginBottom="8dp"
+			android:layout_marginLeft="24dp"
+			android:layout_marginStart="24dp"
+			android:layout_marginTop="8dp"
+			android:gravity="center"
+			android:text="@string/icon_pencil"
+			android:textColor="#ffffff"
+			android:textSize="24sp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"/>
+
+		<!-- INPUT BUTTON TEXT TOP -->
+		<TextView
+			android:id="@+id/main_activity_input_button_text_top"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignLeft="@+id/main_activity_input_button_text_bottom"
+			android:layout_alignParentTop="true"
+			android:layout_alignStart="@+id/main_activity_input_button_text_bottom"
+			android:layout_marginLeft="13dp"
+			android:layout_marginStart="13dp"
+			android:gravity="center"
+			android:text="@string/main_activity_input_button_text_top"
+			android:textColor="#ffffff"
+			android:textSize="19sp"
+			android:textStyle="bold"
+			app:layout_constraintStart_toEndOf="@+id/main_activity_input_button_icon"
+			app:layout_constraintTop_toTopOf="parent"/>
+
+		<!-- INPUT BUTTON TEXT BOTTOM -->
+		<TextView
+			android:id="@+id/main_activity_input_button_text_bottom"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_centerHorizontal="true"
+			android:layout_marginLeft="14dp"
+			android:layout_marginStart="14dp"
+			android:gravity="center"
+			android:paddingBottom="3dp"
+			android:text="@string/main_activity_input_button_text_bottom"
+			android:textColor="#ffffff"
+			android:textSize="11sp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/main_activity_input_button_icon"
+			app:layout_constraintTop_toBottomOf="@+id/main_activity_input_button_text_top"
+			app:layout_constraintVertical_bias="0.0"/>
+
+	</android.support.constraint.ConstraintLayout>
+
+	<!-- SETTINGS BUTTON -->
+	<TextView
+		android:id="@+id/main_activity_settings_button"
+		android:layout_width="35dp"
+		android:layout_height="35dp"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentStart="true"
+		android:layout_marginBottom="30dp"
+		android:layout_marginLeft="35dp"
+		android:layout_marginStart="35dp"
+		android:clickable="true"
+		android:gravity="center"
+		android:text="@string/icon_settings"
+		android:focusable="true"
+		android:textColor="#ffffff"
+		android:textSize="35sp"
+		android:onClick="openSettingsActivity"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		/>
+
+	<!-- MORE INFO BUTTON -->
+	<TextView
+		android:id="@+id/main_activity_text_more"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentRight="true"
+		android:layout_marginBottom="35dp"
+		android:layout_marginEnd="30dp"
+		android:layout_marginRight="30dp"
+		android:clickable="true"
+		android:focusable="true"
+		android:gravity="center"
+		android:onClick="openAboutActivity"
+		android:text="@string/main_activity_text_more"
+		android:textAllCaps="false"
+		android:textColor="#ffffff"
+		android:textStyle="bold"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

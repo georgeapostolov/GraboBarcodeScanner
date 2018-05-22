@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context=".AboutActivity"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/background"
+	>
+
+	<!-- BACK BUTTON -->
+	<TextView
+		android:id="@+id/about_activity_back_button"
+		android:layout_width="46dp"
+		android:layout_height="46dp"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginLeft="10dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginTop="15dp"
+		android:gravity="center"
+		android:onClick="closeActivity"
+		android:text="@string/icon_arrow_back"
+		android:textColor="#ffffff"
+		android:textSize="46sp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<!-- GRABO LOGO -->
+	<ImageView
+		android:id="@+id/about_activity_logo"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="15dp"
+		android:contentDescription="@string/grabo_logo"
+		android:src="@drawable/logo"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<!-- ABOUT DESCRIPTION -->
+	<TextView
+		android:id="@+id/about_activity_text_description"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginEnd="32dp"
+		android:layout_marginLeft="32dp"
+		android:layout_marginRight="32dp"
+		android:layout_marginStart="32dp"
+		android:layout_marginTop="50dp"
+		android:text="@string/about_activity_text_description"
+		android:textColor="#ffffff"
+		android:textSize="14sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/about_activity_logo"/>
+
+</android.support.constraint.ConstraintLayout>

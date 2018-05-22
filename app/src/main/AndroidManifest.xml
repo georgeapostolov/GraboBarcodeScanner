@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="bg.grabo.scanner"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-feature android:name="android.hardware.camera" android:required="true" />
+
+	<application
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:supportsRtl="true"
+		android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+		android:name="bg.grabo.scanner.MyApplication"
+		>
+
+		<meta-data
+			android:name="com.google.android.gms.vision.DEPENDENCIES"
+			android:value="barcode" />
+
+		<activity android:name="bg.grabo.scanner.AboutActivity" android:screenOrientation="portrait" />
+
+		<activity android:name="bg.grabo.scanner.EndActivity" android:screenOrientation="portrait" />
+
+		<activity android:name="bg.grabo.scanner.ErrorActivity" android:screenOrientation="portrait" />
+
+		<activity android:name="bg.grabo.scanner.InputActivity" android:screenOrientation="portrait" />
+
+		<activity android:name="bg.grabo.scanner.MainActivity" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+
+		<activity android:name="bg.grabo.scanner.ScanActivity" android:screenOrientation="portrait" />
+
+		<activity android:name="bg.grabo.scanner.SettingsActivity" android:screenOrientation="portrait" />
+
+		<activity android:name="bg.grabo.scanner.SuccessActivity" android:screenOrientation="portrait" />
+
+	</application>
+
+</manifest>

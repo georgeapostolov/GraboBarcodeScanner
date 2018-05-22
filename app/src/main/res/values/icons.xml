@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="icon_arrow_back"></string>
+	<string name="icon_rounded_info"></string>
+	<string name="icon_rounded_tick"></string>
+	<string name="icon_rounded_tick_full"></string>
+	<string name="icon_rounded_cross"></string>
+	<string name="icon_rounded_arrow_right"></string>
+	<string name="icon_box"></string>
+	<string name="icon_camera"></string>
+	<string name="icon_pencil"></string>
+	<string name="icon_settings"></string>
+</resources>

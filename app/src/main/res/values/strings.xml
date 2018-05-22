@@ -1,0 +1,65 @@
+<resources>
+
+	<string name="app_name">Grabo Voucher Check</string>
+
+	<string name="grabo_logo">Grabo.bg</string>
+	<string name="back_button">Назад</string>
+	<string name="scan_new_voucher">Сканирай нов ваучер</string>
+	<string name="input_new_voucher">Въведи нов ваучер</string>
+
+	<string name="about_activity_text_description">Приложението е насочено към търговските партньори на Grabo.bg.\n\nЧрез това приложение можете бързо и лесно да правите проверка за валидност на ваучери, предоставени от клиенти, и да ги маркирате като използвани.\n\nПроверката става, като чрез приложението сканирате Баркода или QR-кода на ваучера. Това можете да направите както с разпечатан ваучер на хартия, така и ако клиентът просто покаже QR-кода от телефона си при преглед на ваучер.\n\nВ случай, че клиентът не разполага с баркода или QR-кода, приложението дава възможност и за ръчно въвеждане на номера и секретния код на ваучера.</string>
+
+	<string name="end_activity_marked_as_used">Ваучерът е маркиран \n като използван!</string>
+
+	<string name="error_activity_text_result_header">Невалиден ваучер!</string>
+	<string name="error_activity_text_description">Test</string>
+
+	<string name="input_activity_text_description">Провери за валидност на ваучер:</string>
+	<string name="input_activity_voucher_code_text">Номер на ваучера</string>
+	<string name="input_activity_voucher_secret_code_text">Секретен код</string>
+	<string name="input_activity_button_text">Провери ваучера</string>
+
+	<string name="main_activity_text_description">Провери за валидност на ваучер.</string>
+	<string name="main_activity_text_options">Избери опция:</string>
+	<string name="main_activity_scan_button_text_top">Сканирай</string>
+	<string name="main_activity_scan_button_text_bottom">QR код или Barcode</string>
+	<string name="main_activity_input_button_text_top">Въведи ръчно</string>
+	<string name="main_activity_input_button_text_bottom">Изпиши кода на ваучера</string>
+	<string name="main_activity_text_settings">Настройки</string>
+	<string name="main_activity_text_more">научи повече</string>
+
+	<string name="scan_activity_top_text">Провери за валидност на ваучер:</string>
+	<string name="scan_activity_bottom_text">Сканирайте QR или Баркода\nот ваучера на клиента.</string>
+
+	<string name="settings_activity_text_description">Настройки на приложението:</string>
+	<string name="settings_activity_input_text">ЕИК</string>
+	<string name="settings_activity_save_button">Запази</string>
+
+	<string name="success_activity_text_description">Test</string>
+	<string name="success_activity_mark_as_used">Маркирай като използван</string>
+	<string name="success_activity_text_result_header">Сканирането е успешно!</string>
+
+	<string name="about_title">about the app title</string>
+	<string name="about_description">about the app description</string>
+	<string name="end_title">Заглавие на успеха</string>
+	<string name="end_description">Описание алалбла блаклб албкал кслакдлкалс дласкд асдсдасд и други дълги думи с текст</string>
+	<string name="end_button_home">Начало</string>
+
+	<string name="ok">OK</string>
+	<string name="grant_permission">Достъп до камерата</string>
+	<string name="permission_camera">Приложението трябва да има достъп до камерата, за да може да сканира баркод или QR-код</string>
+	<string name="permission_camera_rationale">Нужен е достъп до камерата за сканиране</string>
+	<string name="no_camera_permission">This application cannot run because it does not have the camera permission. The application will now exit.</string>
+	<string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+	<string name="title_activity_main">Barcode Reader Sample</string>
+	<string name="barcode_header">Click "Read Barcode" to read a barcode</string>
+	<string name="read_barcode">Read Barcode</string>
+	<string name="auto_focus">Auto Focus</string>
+	<string name="use_flash">Use Flash</string>
+	<string name="barcode_success">Barcode read successfully</string>
+	<string name="barcode_failure">No barcode captured</string>
+	<string name="barcode_error">"Error reading barcode: %1$s"</string>
+	<string name="grant">Одобри</string>
+	<string name="cancel">Отказ</string>
+
+</resources>

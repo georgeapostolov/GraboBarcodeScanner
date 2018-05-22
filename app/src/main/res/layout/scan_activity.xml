@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/background"
+	tools:context=".ScanActivity"
+	>
+
+	<!-- BACK BUTTON -->
+	<TextView
+		android:id="@+id/scan_activity_back_button"
+		android:layout_width="46dp"
+		android:layout_height="46dp"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginLeft="10dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginTop="15dp"
+		android:gravity="center"
+		android:onClick="closeActivity"
+		android:text="@string/icon_arrow_back"
+		android:textColor="#ffffff"
+		android:textSize="46sp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<!-- GRABO LOGO -->
+	<ImageView
+		android:id="@+id/scan_activity_logo"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="15dp"
+		android:contentDescription="@string/grabo_logo"
+		android:src="@drawable/logo"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<!-- SCAN DESCRIPTION TEXT -->
+	<TextView
+		android:id="@+id/scan_activity_top_text"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="40dp"
+		android:text="@string/scan_activity_top_text"
+		android:textAlignment="center"
+		android:textColor="#fff"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/scan_activity_logo"
+		/>
+
+	<!-- CAMERA LAYOUT -->
+	<RelativeLayout
+		android:id="@+id/relativeLayout2"
+		android:layout_width="300dp"
+		android:layout_height="300dp"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="20dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/scan_activity_top_text">
+
+		<!-- CAMERA FRAGMENT -->
+		<fragment
+			android:id="@+id/barcode_fragment"
+			android:name="info.androidhive.barcode.BarcodeReader"
+			android:layout_width="300dp"
+			android:layout_height="300dp"/>
+
+		<!-- CAMERA OVERLAY -->
+		<info.androidhive.barcode.ScannerOverlay
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="#44000000"
+			app:line_color="#da5151"
+			app:line_speed="6"
+			app:line_width="4"
+			app:square_height="250"
+			app:square_width="250"/>
+
+	</RelativeLayout>
+
+	<!-- INFO TEXT -->
+	<TextView
+		android:id="@+id/scan_activity_bottom_text"
+		android:layout_width="300dp"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="20dp"
+		android:text="@string/scan_activity_bottom_text"
+		android:textAlignment="center"
+		android:textColor="#fff"
+		android:textSize="17sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
+		/>
+
+</android.support.constraint.ConstraintLayout>

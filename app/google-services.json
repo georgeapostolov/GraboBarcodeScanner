@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "491630395831",
+    "firebase_url": "https://grabo-scanner.firebaseio.com",
+    "project_id": "grabo-scanner",
+    "storage_bucket": "grabo-scanner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491630395831:android:dca40a5697263b7c",
+        "android_client_info": {
+          "package_name": "bg.grabo.scanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491630395831-ecb0t2b3t9f99ugichl81hl2l9r6rflv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "bg.grabo.scanner",
+            "certificate_hash": "42e1644db936374b7d32a8fe6216319811410c04"
+          }
+        },
+        {
+          "client_id": "491630395831-socoqaq3kq4o6mov8tp29t7h93tbb119.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtTut2imdnFm6gB35KN6Gm3QNfyrZlK-s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491630395831-socoqaq3kq4o6mov8tp29t7h93tbb119.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

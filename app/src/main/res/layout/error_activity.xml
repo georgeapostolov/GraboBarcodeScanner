@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context=".ErrorActivity"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/background"
+	android:clipChildren="false"
+	android:clipToPadding="false"
+	>
+
+	<!-- BACK BUTTON -->
+	<TextView
+		android:id="@+id/error_activity_back_button"
+		android:layout_width="46dp"
+		android:layout_height="46dp"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginLeft="10dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginTop="15dp"
+		android:gravity="center"
+		android:onClick="closeActivity"
+		android:text="@string/icon_arrow_back"
+		android:textColor="#ffffff"
+		android:textSize="46sp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<!-- GRABO LOGO -->
+	<ImageView
+		android:id="@+id/error_activity_logo"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="15dp"
+		android:contentDescription="@string/grabo_logo"
+		android:src="@drawable/logo"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<!-- WHITE BOX -->
+	<RelativeLayout
+		android:id="@+id/error_result_background"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginEnd="30dp"
+		android:layout_marginLeft="25dp"
+		android:layout_marginRight="25dp"
+		android:layout_marginStart="30dp"
+		android:layout_marginTop="45dp"
+		android:background="@drawable/rounded_shape"
+		android:clipChildren="false"
+		android:clipToPadding="false"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/error_activity_logo"
+		>
+
+		<!-- RED CROSS ICON -->
+		<TextView
+			android:id="@+id/error_activity_top_header_icon"
+			android:layout_width="58sp"
+			android:layout_height="58sp"
+			android:layout_alignParentTop="true"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="-25dp"
+			android:background="@drawable/rounded_header_image"
+			android:gravity="center"
+			android:text="@string/icon_rounded_cross"
+			android:textColor="#e57373"
+			android:textSize="50sp"
+			/>
+
+		<!-- ERROR TEXT + 1PX BORDER -->
+		<TextView
+			android:id="@+id/error_activity_text_result_header"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentTop="true"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="30dp"
+			android:background="@drawable/thin_border"
+			android:gravity="center_horizontal"
+			android:paddingBottom="10dp"
+			android:text="@string/error_activity_text_result_header"
+			android:textColor="#e57373"
+			android:textSize="17sp"
+			/>
+
+		<!-- ERROR RESULT -->
+		<TextView
+			android:id="@+id/error_result"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
+			android:paddingRight="10dp"
+			android:paddingTop="80dp"
+			android:text="@string/error_activity_text_description"
+			android:textColor="#c0c0c0"
+			android:textSize="17sp"
+			/>
+
+	</RelativeLayout>
+
+	<!-- SCAN NEW VOUCHER BUTTON -->
+	<RelativeLayout
+		android:id="@+id/error_activity_scan_new_voucher"
+		android:layout_width="260dp"
+		android:layout_height="50dp"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="20dp"
+		android:contentDescription="@string/scan_new_voucher"
+		android:onClick="openScanActivity"
+		android:background="@drawable/rounded_button_empty"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/error_result_background"
+		android:visibility="gone"
+		>
+
+		<!-- SCAN NEW VOUCHER ICON -->
+		<TextView
+			android:id="@+id/error_activity_scan_new_voucher_icon"
+			android:layout_width="28dp"
+			android:layout_height="28dp"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="30dp"
+			android:layout_marginStart="30dp"
+			android:gravity="center"
+			android:text="@string/icon_camera"
+			android:textColor="#ffffff"
+			android:textSize="28sp"
+			/>
+
+		<!-- SCAN NEW VOUCHER TEXT -->
+		<TextView
+			android:id="@+id/error_activity_scan_new_voucher_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="10dp"
+			android:layout_marginStart="10dp"
+			android:layout_toEndOf="@+id/error_activity_scan_new_voucher_icon"
+			android:layout_toRightOf="@+id/error_activity_scan_new_voucher_icon"
+			android:gravity="center"
+			android:text="@string/scan_new_voucher"
+			android:textColor="#ffffff"
+			android:textSize="15sp"
+			/>
+
+	</RelativeLayout>
+
+	<!-- INPUT NEW VOUCHER BUTTON -->
+	<RelativeLayout
+		android:id="@+id/error_activity_input_new_voucher"
+		android:layout_width="260dp"
+		android:layout_height="50dp"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="20dp"
+		android:contentDescription="@string/scan_new_voucher"
+		android:onClick="openInputActivity"
+		android:background="@drawable/rounded_button_empty"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/error_result_background"
+		android:visibility="gone"
+		>
+
+		<!-- INPUT NEW VOUCHER ICON -->
+		<TextView
+			android:id="@+id/error_activity_input_new_voucher_icon"
+			android:layout_width="20dp"
+			android:layout_height="20dp"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="45dp"
+			android:layout_marginStart="45dp"
+			android:gravity="center"
+			android:text="@string/icon_pencil"
+			android:textColor="#ffffff"
+			android:textSize="20sp"
+			/>
+
+		<!-- INPUT NEW VOUCHER TEXT -->
+		<TextView
+			android:id="@+id/error_activity_input_new_voucher_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="10dp"
+			android:layout_marginStart="10dp"
+			android:layout_toEndOf="@+id/error_activity_input_new_voucher_icon"
+			android:layout_toRightOf="@+id/error_activity_input_new_voucher_icon"
+			android:gravity="center"
+			android:text="@string/input_new_voucher"
+			android:textColor="#ffffff"
+			android:textSize="15sp"
+			/>
+
+	</RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
