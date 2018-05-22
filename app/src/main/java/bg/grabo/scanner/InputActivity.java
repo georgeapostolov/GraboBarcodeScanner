@@ -117,7 +117,7 @@ public class InputActivity extends AppCompatActivity {
 			    @Override
 		         public void onErrorResponse(VolleyError error) {
 				    is_loading = false;
-				    Toast.makeText(getApplicationContext(), R.string.input_activity_no_response, Toast.LENGTH_LONG).show();
+				    Toast.makeText(getApplicationContext(), R.string.input_activity_no_response, Toast.LENGTH_SHORT).show();
 		       }
 		    }
 		);

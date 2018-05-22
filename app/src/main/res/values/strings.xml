@@ -22,7 +22,7 @@
 	<string name="input_activity_empty_voucher_secret_code_text">Секретния код на ваучера не може да бъде празен</string>
 	<string name="input_activity_no_response">Няма връзка със сървъра на Grabo.bg</string>
 
-	<string name="main_activity_text_description">Провери за валидност на ваучер.</string>
+	<string name="main_activity_text_description">Провери за валидност на ваучер</string>
 	<string name="main_activity_text_options">Избери опция:</string>
 	<string name="main_activity_scan_button_text_top">Сканирай</string>
 	<string name="main_activity_scan_button_text_bottom">QR код или Barcode</string>
@@ -33,7 +33,7 @@
 
 	<string name="scan_activity_top_text">Провери за валидност на ваучер:</string>
 	<string name="scan_activity_bottom_text">Сканирайте QR или Баркода\nот ваучера на клиента.</string>
-	<string name="scan_activity_invalid_barcode">Сканираният баркод е невалиден</string>
+	<string name="scan_activity_invalid_barcode">Сканираният баркод е невалиден за Grabo ваучер</string>
 	<string name="scan_activity_no_response">Няма връзка със сървъра на Grabo.bg</string>
 
 	<string name="settings_activity_text_description">Настройки на приложението:</string>

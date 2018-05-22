@@ -77,7 +77,6 @@ public class ScanActivity extends AppCompatActivity implements BarcodeReader.Bar
     @Override
     public void onScanned(final Barcode barcode) {
     	if (!is_loading) {
-    		is_loading = true;
     		if (can_sound) {
 			    barcodeReader.playBeep();
 		    }
@@ -98,6 +97,7 @@ public class ScanActivity extends AppCompatActivity implements BarcodeReader.Bar
 		            boolean code_found = false;
 		            if (scanned.matches(regex)) {
 			            code_found = true;
+			            is_loading = true;
 			            codeFound(scanned, "", "", "barcode");
 		            } else {
 			            if (scanned.contains("grabo.bg/check")) {
@@ -105,11 +105,12 @@ public class ScanActivity extends AppCompatActivity implements BarcodeReader.Bar
 				            String voucher_code = uri.getQueryParameter("c");
 				            String voucher_secret_code = uri.getQueryParameter("s");
 				            code_found = true;
+				            is_loading = true;
 				            codeFound("", voucher_code, voucher_secret_code, "qr");
 			            }
 		            }
 		            if (!code_found) {
-			            Toast.makeText(getApplicationContext(), R.string.scan_activity_invalid_barcode + ": " + scanned, Toast.LENGTH_LONG).show();
+			            Toast.makeText(getApplicationContext(), R.string.scan_activity_invalid_barcode, Toast.LENGTH_SHORT).show();
 		            }
 	            }
 	        });
@@ -127,7 +128,7 @@ public class ScanActivity extends AppCompatActivity implements BarcodeReader.Bar
 
     @Override
     public void onCameraPermissionDenied() {
-        Toast.makeText(getApplicationContext(), "Достъпът до камерата е забранен!", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Достъпът до камерата е забранен!", Toast.LENGTH_SHORT).show();
         finish();
     }
 
@@ -181,7 +182,7 @@ public class ScanActivity extends AppCompatActivity implements BarcodeReader.Bar
 			    @Override
 		         public void onErrorResponse(VolleyError error) {
 				    is_loading = false;
-				    Toast.makeText(getApplicationContext(), R.string.scan_activity_no_response, Toast.LENGTH_LONG).show();
+				    Toast.makeText(getApplicationContext(), R.string.scan_activity_no_response, Toast.LENGTH_SHORT).show();
 		       }
 		    }
 		);
