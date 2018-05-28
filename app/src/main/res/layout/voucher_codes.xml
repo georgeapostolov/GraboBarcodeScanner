@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/success_activity_voucher_code_title"
+		android:layout_width="126dp"
+		android:layout_height="24dp"
+		android:text="@string/success_activity_voucher_code_text"
+		android:textColor="#909090"
+		android:textSize="17sp"
+		app:layout_constraintStart_toStartOf="parent"/>
+
+	<TextView
+		android:id="@+id/success_activity_voucher_code_text"
+		android:layout_width="126dp"
+		android:layout_height="26dp"
+		android:textColor="#333333"
+		android:textSize="18sp"
+		app:layout_constraintStart_toStartOf="@+id/success_activity_voucher_code_title"
+		app:layout_constraintTop_toBottomOf="@+id/success_activity_voucher_code_title"/>
+
+	<TextView
+		android:id="@+id/success_activity_voucher_secret_code_title"
+		android:layout_width="126dp"
+		android:layout_height="24dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginStart="10dp"
+		android:text="@string/success_activity_voucher_secret_code_text"
+		android:textColor="#909090"
+		android:textSize="17sp"
+		app:layout_constraintStart_toEndOf="@+id/success_activity_voucher_code_title"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+	<TextView
+		android:id="@+id/success_activity_voucher_secret_code_text"
+		android:layout_width="126dp"
+		android:layout_height="26dp"
+		android:textColor="#333333"
+		android:textSize="18sp"
+		app:layout_constraintStart_toStartOf="@+id/success_activity_voucher_secret_code_title"
+		app:layout_constraintTop_toBottomOf="@+id/success_activity_voucher_secret_code_title"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -126,6 +126,25 @@ public class SuccessActivity extends AppCompatActivity {
 				voucher_title_textview.setTypeface(MyApplication.roboto_regular);
 				voucher_title_textview.setText(voucher_title);
 
+				// codes
+				LinearLayout voucher_codes_layout = findViewById(R.id.success_activity_voucher_codes);
+				View voucher_code_layout = inflater.inflate(R.layout.voucher_codes, nullParent, false);
+				voucher_codes_layout.addView(voucher_code_layout);
+
+				TextView voucher_code_title_textview = findViewById(R.id.success_activity_voucher_code_title);
+				voucher_code_title_textview.setTypeface(MyApplication.roboto_light);
+				String voucher_code = voucher.getString("voucher_code");
+				TextView voucher_code_text_textview = findViewById(R.id.success_activity_voucher_code_text);
+				voucher_code_text_textview.setTypeface(MyApplication.roboto_regular);
+				voucher_code_text_textview.setText(voucher_code);
+
+				TextView voucher_secret_code_title_textview = findViewById(R.id.success_activity_voucher_secret_code_title);
+				voucher_secret_code_title_textview.setTypeface(MyApplication.roboto_light);
+				String voucher_secret_code = voucher.getString("voucher_confirm_code");
+				TextView voucher_secret_code_text_textview = findViewById(R.id.success_activity_voucher_secret_code_text);
+				voucher_secret_code_text_textview.setTypeface(MyApplication.roboto_regular);
+				voucher_secret_code_text_textview.setText(voucher_secret_code);
+
 				// company name
 				TextView company_name_textview = findViewById(R.id.success_activity_company_name_title);
 				company_name_textview.setTypeface(MyApplication.roboto_light);

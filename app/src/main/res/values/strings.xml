@@ -49,6 +49,8 @@
 	<string name="success_activity_no_response">Няма връзка със сървъра на Grabo.bg</string>
 	<string name="success_activity_warning_text">Внимание:</string>
 	<string name="success_activity_company_title_text">Доставчик:</string>
+	<string name="success_activity_voucher_code_text">Ваучер код:</string>
+	<string name="success_activity_voucher_secret_code_text">Секретен код:</string>
 	<string name="success_activity_username_text">Закупен от:</string>
 	<string name="success_activity_price_text">Цена:</string>
 	<string name="success_activity_amount_paid_text">Платени:</string>
